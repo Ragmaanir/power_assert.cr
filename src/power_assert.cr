@@ -1,5 +1,3 @@
-require "spec"
-
 module PowerAssert
   VERSION = "0.2.3"
 
@@ -307,7 +305,7 @@ module PowerAssert
         %breakdowns.to_s(io)
       end
 
-      fail %message, {{ file }}, {{ line }}
+      raise "At #{{{ file }}}:{{ line }}:\n#{%message}"
     end
 
     %result
